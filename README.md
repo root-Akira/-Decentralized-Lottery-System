@@ -1,40 +1,113 @@
-# Agoric Dapp Starter: Offer Up
+# Decentralized Lottery Application
 
-Offer Up is a simple Dapp for the [Agoric smart contract platform](https://docs.agoric.com/) that permits users to explore items for sale in a marketplace, displaying default options of maps, potions, and scrolls. Users can select up to three items in any combination, create an offer starting from 0.25 [IST](https://agoric.com/blog/getting-started/ist), and upon transaction confirmation, receive the chosen items in their wallet while the offered amount is deducted from their balance.
+## Overview
+The Decentralized Lottery Application is a blockchain-based platform that enables participants to enter lotteries in a secure, transparent, and decentralized manner. Built using [Agoric](https://agoric.com/) and JavaScript, this project eliminates intermediaries, ensuring fair and tamper-proof lottery draws.
 
-<div style="display: flex; align-items: center; justify-content: center; height: 300;">
-    <img src="https://docs.agoric.com/assets/new_002_small2.DgAL2zV8.png" alt="Offer Up Dapp" style="display: block; margin: auto;">
-</div>
+---
 
-## Getting started
+## Features
+- **Transparency**: All transactions and lottery results are recorded on the blockchain.
+- **Fairness**: Random winner selection using secure cryptographic methods.
+- **Decentralization**: Operates on a blockchain network, removing reliance on central authorities.
+- **Ease of Use**: Intuitive user interface for participants.
 
-Detailed instructions regarding setting up the environment with a video walkthrough is available at [Your First Agoric Dapp](https://docs.agoric.com/guides/getting-started/) tutorial. But if you have the environment set, i.e., have correct version of node, yarn, docker, and Keplr wallet installed, below are the steps that you need to follow. *You can also use the same instructions to follow along in Github Codespaces without any installation or downloads on your local machine, apart from Keplr which is needed to connect to dApp.*
-- run the `yarn install` command to install any solution dependencies. *Downloading all the required dependencies may take several minutes. The UI depends on the React framework, and the contract depends on the Agoric framework. The packages in this project also have development dependencies for testing, code formatting, and static analysis.*
-- start a local Agoric blockchain using the `yarn start:docker` command.
-- run `yarn docker:logs` to check the logs. Once your logs resemble the following, stop the logs by pressing `ctrl+c`.
+---
+
+## Tech Stack
+- **Blockchain Platform**: Agoric
+- **Programming Language**: Hardened JavaScript
+- **Frontend**: React.js (or your preferred framework)
+- **Smart Contracts**: Agoric's Zoe framework
+
+---
+
+## Prerequisites
+Before you begin, ensure you have the following installed:
+
+1. **Node.js**: [Download and install](https://nodejs.org/)
+2. **Agoric SDK**: Install via npm:
+   ```bash
+   npm install -g @agoric/sdk
+   ```
+3. **Git**: [Download and install](https://git-scm.com/)
+
+---
+
+## Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/decentralized-lottery.git
+   ```
+
+2. Navigate to the project directory:
+   ```bash
+   cd decentralized-lottery
+   ```
+
+3. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+4. Start the local blockchain:
+   ```bash
+   agoric start
+   ```
+
+5. Deploy the contract:
+   ```bash
+   agoric deploy contract
+   ```
+
+6. Deploy the API and frontend:
+   ```bash
+   agoric deploy api
+   ```
+
+---
+
+## Usage
+
+1. Open the application in your browser by navigating to `http://localhost:3000`.
+2. **Create a Lottery**: Specify the ticket price and lottery duration.
+3. **Join a Lottery**: Purchase a ticket by sending the required amount of cryptocurrency.
+4. **Winner Announcement**: Once the lottery ends, the smart contract selects a winner and transfers the prize.
+
+---
+
+## Project Structure
 ```
-demo-agd-1  | 2023-12-27T04:08:06.384Z block-manager: block 1003 begin
-demo-agd-1  | 2023-12-27T04:08:06.386Z block-manager: block 1003 commit
-demo-agd-1  | 2023-12-27T04:08:07.396Z block-manager: block 1004 begin
-demo-agd-1  | 2023-12-27T04:08:07.398Z block-manager: block 1004 commit
-demo-agd-1  | 2023-12-27T04:08:08.405Z block-manager: block 1005 begin
-demo-agd-1  | 2023-12-27T04:08:08.407Z block-manager: block 1005 commit
+.
+├── contract/        # Smart contract code
+├── api/             # Backend APIs
+├── ui/              # Frontend application
+├── package.json     # Project metadata and dependencies
+└── README.md        # Project documentation
 ```
-- **Only if you are running this in a github codespace:** go to `PORTS` in bottom-right panel, and make all listed ports `public` by selecting `Port Visibility` after right-click.
-- run `yarn start:contract` to start the smart contract. 
-- run `yarn start:ui` to start the smart contract. You can use the link in the output to load the smart contract UI in a browser.
 
-For any troubleshooting please refer to the detailed tutorial at [Here](https://docs.agoric.com/guides/getting-started/).
-
-## Testing
-
-To run the unit test:
-- run `yarn test` to run the unit tests
-
-To run the end to end test:
-- run `yarn test:e2e --browser chrome` to run the end to end tests; you may replace `chrome` with your favorite browser name. Although `chrome` is the recommended browser to run end to end tests at this point.
-
+---
 
 ## Contributing
+We welcome contributions! Please follow these steps:
 
-See [CONTRIBUTING](./CONTRIBUTING.md) for more on contributing to this repo.
+1. Fork the repository.
+2. Create a new branch for your feature:
+   ```bash
+   git checkout -b feature-name
+   ```
+3. Commit your changes:
+   ```bash
+   git commit -m "Description of changes"
+   ```
+4. Push to the branch:
+   ```bash
+   git push origin feature-name
+   ```
+5. Submit a pull request.
+
+---
+
+## Acknowledgments
+Special thanks to the [Agoric](https://agoric.com/) team for their excellent blockchain framework and tools.
+
